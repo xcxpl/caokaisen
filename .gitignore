@@ -106,3 +106,6 @@ desktop.ini
 .env.*
 credentials.json
 token.json
+
+# ---------- 9. 工具工作区数据（含 AI 会话记忆，勿公开）----------
+.workbuddy/
