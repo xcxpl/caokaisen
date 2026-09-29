@@ -1,0 +1,10 @@
+﻿task,dataset,model,mode,split_id,num_layers,hidden,gat_heads,lr,epochs,batch_size,num_neighbors,num_nodes,num_edges,n_params,val_acc,test_acc,train_time_s,loop_time_s,time_per_epoch_s,wall_time_s,infer_time_ms,peak_gpu_mb,seed
+node_classification,Cora,gcn,sample,0,2,64,,0.01,200,16,5,2708,10556,96519,0.78,0.773,16.99,18.4,0.085,18.41,5.72,43.2,42
+node_classification,Cora,gcn,sample,0,2,64,,0.01,200,16,10,2708,10556,96519,0.786,0.774,15.74,17.26,0.0787,17.27,5.93,43.3,42
+node_classification,Cora,gcn,sample,0,2,64,,0.01,200,16,20,2708,10556,96519,0.77,0.769,16.44,17.93,0.0822,17.94,5.64,58.7,42
+node_classification,Cora,gcn,sample,0,2,64,,0.01,200,32,5,2708,10556,96519,0.792,0.753,8.96,10.41,0.0448,10.42,5.72,73.0,42
+node_classification,Cora,gcn,sample,0,2,64,,0.01,200,32,10,2708,10556,96519,0.788,0.777,9.35,10.84,0.0467,10.86,5.49,76.6,42
+node_classification,Cora,gcn,sample,0,2,64,,0.01,200,32,20,2708,10556,96519,0.778,0.789,9.93,11.43,0.0496,11.44,5.76,73.8,42
+node_classification,Cora,gcn,sample,0,2,64,,0.01,200,64,5,2708,10556,96519,0.78,0.782,5.68,7.13,0.0284,7.14,5.86,87.9,42
+node_classification,Cora,gcn,sample,0,2,64,,0.01,200,64,10,2708,10556,96519,0.766,0.799,5.79,7.09,0.029,7.1,5.67,103.2,42
+node_classification,Cora,gcn,sample,0,2,64,,0.01,200,64,20,2708,10556,96519,0.774,0.765,5.48,6.5,0.0274,6.52,3.24,112.0,42

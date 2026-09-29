@@ -1,0 +1,259 @@
+device = cuda
+
+==============================================================================
+STAGE 1  主对比：数据集 × 模型 × 训练模式
+==============================================================================
+  [skip] Cora/gcn/full/s0
+  [skip] Cora/gcn/sample/s0
+  [skip] Cora/gat/full/s0
+  [skip] Cora/gat/sample/s0
+  [skip] Cora/sage/full/s0
+  [skip] Cora/sage/sample/s0
+  [skip] Cora/gin/full/s0
+  [skip] Cora/gin/sample/s0
+  [skip] Citeseer/gcn/full/s0
+  [skip] Citeseer/gcn/sample/s0
+  [skip] Citeseer/gat/full/s0
+  [skip] Citeseer/gat/sample/s0
+  [skip] Citeseer/sage/full/s0
+  [skip] Citeseer/sage/sample/s0
+  [skip] Citeseer/gin/full/s0
+  [skip] Citeseer/gin/sample/s0
+  [skip] Amazon/gcn/full/s0
+  [skip] Amazon/gcn/full/s1
+  [skip] Amazon/gcn/full/s2
+  [skip] Amazon/gcn/full/s3
+  [skip] Amazon/gcn/full/s4
+  [skip] Amazon/gcn/full/s5
+  [skip] Amazon/gcn/full/s6
+  [skip] Amazon/gcn/full/s7
+  [skip] Amazon/gcn/full/s8
+  [skip] Amazon/gcn/full/s9
+  [run ] Amazon/gcn/sample/s0
+         test_auc=0.9645 test_ap=0.9617 train=118.8s per_ep=1.188s
+  [run ] Amazon/gcn/sample/s1
+         test_auc=0.9613 test_ap=0.9580 train=117.0s per_ep=1.170s
+  [run ] Amazon/gcn/sample/s2
+         test_auc=0.9629 test_ap=0.9582 train=117.1s per_ep=1.171s
+  [run ] Amazon/gat/full/s0
+         test_auc=0.9580 test_ap=0.9464 train=4.2s per_ep=0.042s
+  [run ] Amazon/gat/full/s1
+         test_auc=0.9514 test_ap=0.9442 train=4.1s per_ep=0.041s
+  [run ] Amazon/gat/full/s2
+         test_auc=0.9563 test_ap=0.9478 train=4.1s per_ep=0.041s
+  [run ] Amazon/gat/full/s3
+         test_auc=0.9629 test_ap=0.9559 train=4.1s per_ep=0.041s
+  [run ] Amazon/gat/full/s4
+         test_auc=0.9598 test_ap=0.9511 train=4.1s per_ep=0.041s
+  [run ] Amazon/gat/full/s5
+         test_auc=0.9448 test_ap=0.9267 train=4.1s per_ep=0.041s
+  [run ] Amazon/gat/full/s6
+         test_auc=0.9567 test_ap=0.9482 train=4.1s per_ep=0.041s
+  [run ] Amazon/gat/full/s7
+         test_auc=0.9501 test_ap=0.9398 train=4.1s per_ep=0.041s
+  [run ] Amazon/gat/full/s8
+         test_auc=0.9526 test_ap=0.9414 train=4.1s per_ep=0.041s
+  [run ] Amazon/gat/full/s9
+         test_auc=0.9525 test_ap=0.9413 train=4.1s per_ep=0.041s
+  [run ] Amazon/gat/sample/s0
+         test_auc=0.9497 test_ap=0.9378 train=124.0s per_ep=1.240s
+  [run ] Amazon/gat/sample/s1
+         test_auc=0.9486 test_ap=0.9363 train=126.2s per_ep=1.262s
+  [run ] Amazon/gat/sample/s2
+         test_auc=0.9461 test_ap=0.9326 train=126.3s per_ep=1.263s
+  [run ] Amazon/sage/full/s0
+         test_auc=0.9614 test_ap=0.9567 train=6.0s per_ep=0.060s
+  [run ] Amazon/sage/full/s1
+         test_auc=0.9632 test_ap=0.9571 train=6.0s per_ep=0.060s
+  [run ] Amazon/sage/full/s2
+         test_auc=0.9578 test_ap=0.9498 train=6.0s per_ep=0.060s
+  [run ] Amazon/sage/full/s3
+         test_auc=0.9624 test_ap=0.9574 train=6.0s per_ep=0.060s
+  [run ] Amazon/sage/full/s4
+         test_auc=0.9584 test_ap=0.9510 train=6.0s per_ep=0.060s
+  [run ] Amazon/sage/full/s5
+         test_auc=0.9622 test_ap=0.9555 train=6.0s per_ep=0.060s
+  [run ] Amazon/sage/full/s6
+         test_auc=0.9587 test_ap=0.9543 train=6.0s per_ep=0.060s
+  [run ] Amazon/sage/full/s7
+         test_auc=0.9618 test_ap=0.9535 train=6.0s per_ep=0.060s
+  [run ] Amazon/sage/full/s8
+         test_auc=0.9622 test_ap=0.9562 train=6.0s per_ep=0.060s
+  [run ] Amazon/sage/full/s9
+         test_auc=0.9636 test_ap=0.9567 train=6.0s per_ep=0.060s
+  [run ] Amazon/sage/sample/s0
+         test_auc=0.9628 test_ap=0.9560 train=111.9s per_ep=1.119s
+  [run ] Amazon/sage/sample/s1
+         test_auc=0.9637 test_ap=0.9574 train=110.4s per_ep=1.104s
+  [run ] Amazon/sage/sample/s2
+device = cuda
+
+==============================================================================
+STAGE 1  主对比：数据集 × 模型 × 训练模式
+==============================================================================
+  [skip] Cora/gcn/full/s0
+  [skip] Cora/gcn/sample/s0
+  [skip] Cora/gat/full/s0
+  [skip] Cora/gat/sample/s0
+  [skip] Cora/sage/full/s0
+  [skip] Cora/sage/sample/s0
+  [skip] Cora/gin/full/s0
+  [skip] Cora/gin/sample/s0
+  [skip] Citeseer/gcn/full/s0
+  [skip] Citeseer/gcn/sample/s0
+  [skip] Citeseer/gat/full/s0
+  [skip] Citeseer/gat/sample/s0
+  [skip] Citeseer/sage/full/s0
+  [skip] Citeseer/sage/sample/s0
+  [skip] Citeseer/gin/full/s0
+  [skip] Citeseer/gin/sample/s0
+  [skip] Amazon/gcn/full/s0
+  [skip] Amazon/gcn/full/s1
+  [skip] Amazon/gcn/full/s2
+  [skip] Amazon/gcn/full/s3
+  [skip] Amazon/gcn/full/s4
+  [skip] Amazon/gcn/full/s5
+  [skip] Amazon/gcn/full/s6
+  [skip] Amazon/gcn/full/s7
+  [skip] Amazon/gcn/full/s8
+  [skip] Amazon/gcn/full/s9
+  [skip] Amazon/gcn/sample/s0
+  [skip] Amazon/gcn/sample/s1
+  [skip] Amazon/gcn/sample/s2
+  [skip] Amazon/gat/full/s0
+  [skip] Amazon/gat/full/s1
+  [skip] Amazon/gat/full/s2
+  [skip] Amazon/gat/full/s3
+  [skip] Amazon/gat/full/s4
+  [skip] Amazon/gat/full/s5
+  [skip] Amazon/gat/full/s6
+  [skip] Amazon/gat/full/s7
+  [skip] Amazon/gat/full/s8
+  [skip] Amazon/gat/full/s9
+  [skip] Amazon/gat/sample/s0
+  [skip] Amazon/gat/sample/s1
+  [skip] Amazon/gat/sample/s2
+  [skip] Amazon/sage/full/s0
+  [skip] Amazon/sage/full/s1
+  [skip] Amazon/sage/full/s2
+  [skip] Amazon/sage/full/s3
+  [skip] Amazon/sage/full/s4
+  [skip] Amazon/sage/full/s5
+  [skip] Amazon/sage/full/s6
+  [skip] Amazon/sage/full/s7
+  [skip] Amazon/sage/full/s8
+  [skip] Amazon/sage/full/s9
+  [skip] Amazon/sage/sample/s0
+  [skip] Amazon/sage/sample/s1
+  [run ] Amazon/sage/sample/s2
+         test_auc=0.9648 test_ap=0.9590 train=106.1s per_ep=1.061s
+  [run ] Amazon/gin/full/s0
+         test_auc=0.7508 test_ap=0.7157 train=6.1s per_ep=0.061s
+  [run ] Amazon/gin/full/s1
+         test_auc=0.8329 test_ap=0.8297 train=6.1s per_ep=0.061s
+  [run ] Amazon/gin/full/s2
+         test_auc=0.7403 test_ap=0.7104 train=6.1s per_ep=0.061s
+  [run ] Amazon/gin/full/s3
+         test_auc=0.7388 test_ap=0.6926 train=6.1s per_ep=0.061s
+  [run ] Amazon/gin/full/s4
+         test_auc=0.7499 test_ap=0.7122 train=6.1s per_ep=0.061s
+  [run ] Amazon/gin/full/s5
+         test_auc=0.7760 test_ap=0.7529 train=6.1s per_ep=0.061s
+  [run ] Amazon/gin/full/s6
+         test_auc=0.7955 test_ap=0.8047 train=6.1s per_ep=0.061s
+  [run ] Amazon/gin/full/s7
+         test_auc=0.7513 test_ap=0.7688 train=6.1s per_ep=0.061s
+  [run ] Amazon/gin/full/s8
+         test_auc=0.7255 test_ap=0.6708 train=6.1s per_ep=0.061s
+  [run ] Amazon/gin/full/s9
+         test_auc=0.7804 test_ap=0.7767 train=6.1s per_ep=0.061s
+  [run ] Amazon/gin/sample/s0
+         test_auc=0.6494 test_ap=0.5952 train=113.0s per_ep=1.130s
+  [run ] Amazon/gin/sample/s1
+         test_auc=0.7765 test_ap=0.7109 train=112.8s per_ep=1.128s
+  [run ] Amazon/gin/sample/s2
+         test_auc=0.6010 test_ap=0.5569 train=111.6s per_ep=1.116s
+  -> F:\zhuomian\graph_beginner-main\results\task2_main.csv (14 条新记录)
+
+==============================================================================
+STAGE 2  学习率消融（Cora, 全图训练）
+==============================================================================
+  [run ] Cora/gcn/lr=0.1
+         test_auc=0.6985 test_ap=0.7216
+  [run ] Cora/gcn/lr=0.01
+         test_auc=0.8205 test_ap=0.8384
+  [run ] Cora/gcn/lr=0.001
+         test_auc=0.8085 test_ap=0.8254
+  [run ] Cora/gat/lr=0.1
+         test_auc=0.5152 test_ap=0.5500
+  [run ] Cora/gat/lr=0.01
+         test_auc=0.8056 test_ap=0.8119
+  [run ] Cora/gat/lr=0.001
+         test_auc=0.8240 test_ap=0.8404
+  [run ] Cora/sage/lr=0.1
+         test_auc=0.5016 test_ap=0.4793
+  [run ] Cora/sage/lr=0.01
+         test_auc=0.7922 test_ap=0.7847
+  [run ] Cora/sage/lr=0.001
+         test_auc=0.8006 test_ap=0.8013
+  [run ] Cora/gin/lr=0.1
+         test_auc=0.6102 test_ap=0.6237
+  [run ] Cora/gin/lr=0.01
+         test_auc=0.6838 test_ap=0.7185
+  [run ] Cora/gin/lr=0.001
+         test_auc=0.8120 test_ap=0.8202
+  -> F:\zhuomian\graph_beginner-main\results\task2_lr.csv (12 条新记录)
+
+==============================================================================
+STAGE 3  网络层数消融（Cora, 全图训练）
+==============================================================================
+  [run ] Cora/gcn/layers=1
+         test_auc=0.7134 test_ap=0.7357
+  [run ] Cora/gcn/layers=2
+         test_auc=0.8187 test_ap=0.8373
+  [run ] Cora/gcn/layers=3
+         test_auc=0.8292 test_ap=0.8515
+  [run ] Cora/gat/layers=1
+         test_auc=0.6564 test_ap=0.6571
+  [run ] Cora/gat/layers=2
+         test_auc=0.8001 test_ap=0.8099
+  [run ] Cora/gat/layers=3
+         test_auc=0.8046 test_ap=0.8233
+  [run ] Cora/sage/layers=1
+         test_auc=0.7746 test_ap=0.7265
+  [run ] Cora/sage/layers=2
+         test_auc=0.7907 test_ap=0.7866
+  [run ] Cora/sage/layers=3
+         test_auc=0.7973 test_ap=0.7862
+  [run ] Cora/gin/layers=1
+         test_auc=0.7853 test_ap=0.7893
+  [run ] Cora/gin/layers=2
+         test_auc=0.6838 test_ap=0.7186
+  [run ] Cora/gin/layers=3
+         test_auc=0.6548 test_ap=0.6777
+  -> F:\zhuomian\graph_beginner-main\results\task2_layers.csv (12 条新记录)
+
+==============================================================================
+STAGE 4  采样参数消融（Cora, GCN, 子图采样训练）
+==============================================================================
+  [run ] Cora/gcn/sample bs=256 nb=5
+         test_auc=0.8630 per_ep=0.418s
+  [run ] Cora/gcn/sample bs=256 nb=10
+         test_auc=0.8534 per_ep=0.430s
+  [run ] Cora/gcn/sample bs=256 nb=20
+         test_auc=0.8427 per_ep=0.438s
+  [run ] Cora/gcn/sample bs=1024 nb=5
+         test_auc=0.8307 per_ep=0.122s
+  [run ] Cora/gcn/sample bs=1024 nb=10
+         test_auc=0.8291 per_ep=0.123s
+  [run ] Cora/gcn/sample bs=1024 nb=20
+         test_auc=0.8340 per_ep=0.124s
+  [run ] Cora/gcn/sample bs=4096 nb=5
+         test_auc=0.8083 per_ep=0.048s
+  [run ] Cora/gcn/sample bs=4096 nb=10
+         test_auc=0.8075 per_ep=0.049s
+  [run ] Cora/gcn/sample bs=4096 nb=20
+         test_auc=0.8263 per_ep=0.048s
+  -> F:\zhuomian\graph_beginner-main\results\task2_sampler.csv (9 条新记录)
+
+全部完成，用时 843.1s

@@ -1,0 +1,108 @@
+# ============================================================
+# 根级 .gitignore —— 只提交代码 / 笔记 / 配置
+# 模型权重与数据集不入库（体积过大，GitHub 单文件上限 100MB）
+# ============================================================
+
+# ---------- 1. 模型权重 ----------
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.gguf
+*.h5
+*.msgpack
+*.model
+*.faiss
+pytorch_model*.bin
+tf_model.h5
+
+# ---------- 2. 数据集 / 压缩包 ----------
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.gz
+*.bz2
+*.7z
+*.rar
+*.npz
+*.npy
+*.parquet
+*.arrow
+*.arrow_data
+*.jsonl
+*.allx
+*.tx
+*.tsv
+
+# ---------- 3. 目录（权重 / 数据 / 输出）----------
+models/
+**/models/
+data/
+**/data/
+datasets/
+**/datasets/
+checkpoints/
+**/checkpoints/
+ckpt/
+**/ckpt/
+outputs/
+**/outputs/
+runs/
+**/runs/
+logs/
+**/logs/
+wandb/
+**/wandb/
+saved_models/
+**/saved_models/
+
+# ---------- 4. HuggingFace / 下载缓存与残留 ----------
+.cache/
+**/.cache/
+**/hub/
+*.incomplete
+*.part
+*.lock
+
+# ---------- 5. Python 环境与产物 ----------
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+build/
+dist/
+
+# ---------- 6. 编辑器 / 系统 ----------
+.vscode/
+.idea/
+.claude/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---------- 7. 大体积文档（本地留档即可）----------
+*.pdf
+*.doc
+*.docx
+*.ppt
+*.pptx
+*.epub
+
+# ---------- 8. 密钥 / 凭据（安全兜底）----------
+*.key
+*.pem
+.env
+.env.*
+credentials.json
+token.json

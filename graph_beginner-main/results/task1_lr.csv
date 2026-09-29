@@ -1,0 +1,13 @@
+﻿task,dataset,model,mode,split_id,num_layers,hidden,gat_heads,lr,epochs,batch_size,num_neighbors,num_nodes,num_edges,n_params,val_acc,test_acc,train_time_s,loop_time_s,time_per_epoch_s,wall_time_s,infer_time_ms,peak_gpu_mb,seed
+node_classification,Cora,gat,full,0,2,64,8.0,0.001,200,2708,,2708,10556,739655,0.758,0.765,2.82,4.52,0.0141,4.52,5.72,344.3,42
+node_classification,Cora,gat,full,0,2,64,8.0,0.01,200,2708,,2708,10556,739655,0.748,0.764,2.89,4.48,0.0144,4.48,6.09,344.3,42
+node_classification,Cora,gat,full,0,2,64,8.0,0.1,200,2708,,2708,10556,739655,0.786,0.775,2.9,4.53,0.0145,4.53,5.06,344.4,42
+node_classification,Cora,gcn,full,0,2,64,,0.001,200,2708,,2708,10556,96519,0.752,0.767,1.69,2.98,0.0085,2.99,4.15,235.9,42
+node_classification,Cora,gcn,full,0,2,64,,0.01,200,2708,,2708,10556,96519,0.772,0.771,1.61,2.83,0.0081,2.84,3.55,235.9,42
+node_classification,Cora,gcn,full,0,2,64,,0.1,200,2708,,2708,10556,96519,0.768,0.768,1.58,2.56,0.0079,2.57,3.12,235.9,42
+node_classification,Cora,gin,full,0,2,64,,0.001,200,2708,,2708,10556,104841,0.728,0.709,1.59,2.52,0.0079,2.52,2.64,298.4,42
+node_classification,Cora,gin,full,0,2,64,,0.01,200,2708,,2708,10556,104841,0.786,0.772,1.6,2.45,0.008,2.45,2.57,298.4,42
+node_classification,Cora,gin,full,0,2,64,,0.1,200,2708,,2708,10556,104841,0.502,0.49,1.61,2.4,0.008,2.4,2.68,298.4,42
+node_classification,Cora,sage,full,0,2,64,,0.001,200,2708,,2708,10556,192327,0.77,0.764,1.47,2.38,0.0073,2.39,2.55,314.5,42
+node_classification,Cora,sage,full,0,2,64,,0.01,200,2708,,2708,10556,192327,0.764,0.761,1.47,2.33,0.0073,2.33,2.57,314.5,42
+node_classification,Cora,sage,full,0,2,64,,0.1,200,2708,,2708,10556,192327,0.766,0.743,1.43,2.25,0.0072,2.25,2.6,314.5,42

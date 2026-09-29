@@ -1,0 +1,4 @@
+[run] wn18rr | conve
+  -> {"task": "knowledge_graph", "dataset": "wn18rr", "model": "conve", "dim": 200, "lr": 0.001, "epochs": 200, "batch_size": 128, "neg_num": 1, "num_entities": 40943, "num_relations": 11, "train_triples": 86835, "valid_triples": 3034, "test_triples": 3134, "n_params": 10265386, "valid_mrr": 0.1965, "valid_hits@10": 0.384, "test_mrr": 0.2004, "test_hits@1": 0.0877, "test_hits@3": 0.2897, "test_hits@10": 0.3797, "train_time_s": 1683.03, "time_per_epoch_s": 8.4152, "peak_gpu_mb": 282.0, "seed": 42}
+  MRR=0.2004 H@1=0.0877 H@3=0.2897 H@10=0.3797
+[saved] /f/zhuomian/graph_beginner-main/results/task4_conve_long.csv

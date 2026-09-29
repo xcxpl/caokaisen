@@ -1,0 +1,5 @@
+{"preprocessing": {"records_seen": 20, "records_skipped": 0, "total_tokens": 5120, "supervised_tokens": 4482, "max_tokens": 256}, "usable": 20}
+{"trainable": 540672, "total": 494573440, "ratio": 0.001093, "device": "cuda"}
+{"step": 1, "loss": 5.2889, "lr": 0.0002, "tokens": 211, "elapsed_sec": 1.21, "gpu_allocated_mb": 1046.8}
+{"step": 2, "loss": 4.9613, "lr": 1e-05, "tokens": 216, "elapsed_sec": 1.49, "gpu_allocated_mb": 1046.8}
+Saved SFT LoRA adapter to ckpt\sft_smoke

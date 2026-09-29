@@ -1,0 +1,7 @@
+﻿task,dataset,model,dim,lr,epochs,batch_size,neg_num,num_entities,num_relations,train_triples,valid_triples,test_triples,n_params,valid_mrr,valid_hits@10,test_mrr,test_hits@1,test_hits@3,test_hits@10,train_time_s,time_per_epoch_s,peak_gpu_mb,seed
+knowledge_graph,countries_S1,transe,50,0.001,200,1024,1,271,2,1111,24,24,13650,0.7153,1.0,0.6681,0.4167,0.9583,1.0,2.11,0.0106,17.3,42
+knowledge_graph,countries_S1,transe,100,0.001,200,1024,1,271,2,1111,24,24,27300,0.8347,1.0,0.7292,0.5833,0.875,1.0,2.11,0.0106,18.2,42
+knowledge_graph,countries_S1,transe,200,0.001,200,1024,1,271,2,1111,24,24,54600,0.8785,1.0,0.9583,0.9167,1.0,1.0,2.17,0.0109,20.1,42
+knowledge_graph,countries_S1,rotate,50,0.001,200,512,1,271,2,1111,24,24,27200,0.5794,0.875,0.6945,0.5,0.875,0.9167,5.35,0.0268,18.8,42
+knowledge_graph,countries_S1,rotate,100,0.001,200,512,1,271,2,1111,24,24,54400,0.5903,1.0,0.7361,0.5,1.0,1.0,5.41,0.0271,21.2,42
+knowledge_graph,countries_S1,rotate,200,0.001,200,512,1,271,2,1111,24,24,108800,0.5208,1.0,0.6458,0.3333,1.0,1.0,5.33,0.0266,26.2,42

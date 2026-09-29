@@ -1,0 +1,362 @@
+device = cuda
+
+==============================================================================
+STAGE 1  池化方法对比：数据集 × 模型 × {AvgPool, MaxPool, MinPool}
+==============================================================================
+  [run ] MUTAG/gcn/avg
+         test_acc=0.8000 train=7.4s per_ep=0.074s gpu=19MB
+  [run ] MUTAG/gcn/max
+         test_acc=0.8000 train=8.2s per_ep=0.082s gpu=19MB
+  [run ] MUTAG/gcn/min
+         test_acc=0.8500 train=7.0s per_ep=0.070s gpu=19MB
+  [run ] MUTAG/gat/avg
+         test_acc=0.7500 train=9.6s per_ep=0.096s gpu=41MB
+  [run ] MUTAG/gat/max
+         test_acc=0.8000 train=9.3s per_ep=0.093s gpu=41MB
+  [run ] MUTAG/gat/min
+         test_acc=0.8000 train=9.4s per_ep=0.094s gpu=41MB
+  [run ] MUTAG/sage/avg
+         test_acc=0.8000 train=6.0s per_ep=0.060s gpu=19MB
+  [run ] MUTAG/sage/max
+         test_acc=0.8000 train=6.1s per_ep=0.061s gpu=19MB
+  [run ] MUTAG/sage/min
+         test_acc=0.7500 train=6.0s per_ep=0.060s gpu=19MB
+  [run ] MUTAG/gin/avg
+         test_acc=0.9500 train=6.4s per_ep=0.064s gpu=20MB
+  [run ] MUTAG/gin/max
+         test_acc=0.8500 train=6.4s per_ep=0.064s gpu=20MB
+  [run ] MUTAG/gin/min
+         test_acc=0.8000 train=6.4s per_ep=0.064s gpu=20MB
+  [run ] PROTEINS/gcn/avg
+         test_acc=0.7232 train=20.8s per_ep=0.208s gpu=34MB
+  [run ] PROTEINS/gcn/max
+         test_acc=0.7679 train=20.7s per_ep=0.207s gpu=35MB
+  [run ] PROTEINS/gcn/min
+         test_acc=0.7679 train=21.0s per_ep=0.210s gpu=34MB
+  [run ] PROTEINS/gat/avg
+         test_acc=0.7679 train=30.3s per_ep=0.303s gpu=236MB
+  [run ] PROTEINS/gat/max
+         test_acc=0.7679 train=29.2s per_ep=0.292s gpu=236MB
+  [run ] PROTEINS/gat/min
+         test_acc=0.7857 train=29.3s per_ep=0.293s gpu=236MB
+  [run ] PROTEINS/sage/avg
+         test_acc=0.7321 train=19.3s per_ep=0.193s gpu=30MB
+  [run ] PROTEINS/sage/max
+         test_acc=0.6071 train=18.9s per_ep=0.189s gpu=30MB
+  [run ] PROTEINS/sage/min
+         test_acc=0.7589 train=19.4s per_ep=0.194s gpu=31MB
+  [run ] PROTEINS/gin/avg
+         test_acc=0.7411 train=20.1s per_ep=0.201s gpu=32MB
+  [run ] PROTEINS/gin/max
+         test_acc=0.6964 train=19.6s per_ep=0.196s gpu=32MB
+  [run ] PROTEINS/gin/min
+         test_acc=0.7679 train=18.9s per_ep=0.189s gpu=32MB
+  [run ] IMDB-BINARY/gcn/avg
+Traceback (most recent call last):
+  File "F:\zhuomian\graph_beginner-main\任务三\code\run_all.py", line 140, in <module>
+    main()
+  File "F:\zhuomian\graph_beginner-main\任务三\code\run_all.py", line 135, in main
+    fn[s]()
+  File "F:\zhuomian\graph_beginner-main\任务三\code\run_all.py", line 69, in stage1
+    r = run_single(dataset=ds, model=model, pool=pool)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\zhuomian\graph_beginner-main\任务三\code\run.py", line 60, in run_single
+    best_val, best_test, loop_t, ep_times = train_graph_clf(
+                                            ^^^^^^^^^^^^^^^^
+  File "F:\zhuomian\graph_beginner-main\任务三\code\common.py", line 308, in train_graph_clf
+    out = model(batch.x, batch.edge_index, batch.batch)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenono\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\modules\module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenono\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\modules\module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\zhuomian\graph_beginner-main\任务三\code\common.py", line 241, in forward
+    z = self.encoder(x, edge_index)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenono\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\modules\module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenono\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\modules\module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\zhuomian\graph_beginner-main\任务三\code\common.py", line 192, in forward
+    x = conv(x, edge_index)
+        ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenono\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\modules\module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenono\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\modules\module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lenono\.workbuddy\binaries\python\envs\gcn312\Lib\site-packages\torch_geometric\nn\conv\gcn_conv.py", line 242, in forward
+    edge_index, edge_weight, x.size(self.node_dim),
+                             ^^^^^^
+AttributeError: 'NoneType' object has no attribute 'size'
+device = cuda
+
+==============================================================================
+STAGE 1  池化方法对比：数据集 × 模型 × {AvgPool, MaxPool, MinPool}
+==============================================================================
+  [skip] MUTAG/gcn/avg
+  [skip] MUTAG/gcn/max
+  [skip] MUTAG/gcn/min
+  [skip] MUTAG/gat/avg
+  [skip] MUTAG/gat/max
+  [skip] MUTAG/gat/min
+  [skip] MUTAG/sage/avg
+  [skip] MUTAG/sage/max
+  [skip] MUTAG/sage/min
+  [skip] MUTAG/gin/avg
+  [skip] MUTAG/gin/max
+  [skip] MUTAG/gin/min
+  [skip] PROTEINS/gcn/avg
+  [skip] PROTEINS/gcn/max
+  [skip] PROTEINS/gcn/min
+  [skip] PROTEINS/gat/avg
+  [skip] PROTEINS/gat/max
+  [skip] PROTEINS/gat/min
+  [skip] PROTEINS/sage/avg
+  [skip] PROTEINS/sage/max
+  [skip] PROTEINS/sage/min
+  [skip] PROTEINS/gin/avg
+  [skip] PROTEINS/gin/max
+  [skip] PROTEINS/gin/min
+  [run ] IMDB-BINARY/gcn/avg
+         test_acc=0.7100 train=18.9s per_ep=0.189s gpu=31MB
+  [run ] IMDB-BINARY/gcn/max
+         test_acc=0.7100 train=20.3s per_ep=0.203s gpu=31MB
+  [run ] IMDB-BINARY/gcn/min
+         test_acc=0.7400 train=18.6s per_ep=0.185s gpu=31MB
+  [run ] IMDB-BINARY/gat/avg
+         test_acc=0.7200 train=25.7s per_ep=0.257s gpu=244MB
+  [run ] IMDB-BINARY/gat/max
+         test_acc=0.7300 train=25.7s per_ep=0.257s gpu=232MB
+  [run ] IMDB-BINARY/gat/min
+         test_acc=0.7100 train=25.8s per_ep=0.258s gpu=232MB
+  [run ] IMDB-BINARY/sage/avg
+         test_acc=0.7100 train=15.9s per_ep=0.159s gpu=26MB
+  [run ] IMDB-BINARY/sage/max
+         test_acc=0.7400 train=16.0s per_ep=0.160s gpu=26MB
+  [run ] IMDB-BINARY/sage/min
+         test_acc=0.7300 train=15.8s per_ep=0.158s gpu=26MB
+  [run ] IMDB-BINARY/gin/avg
+         test_acc=0.7200 train=17.0s per_ep=0.170s gpu=27MB
+  [run ] IMDB-BINARY/gin/max
+         test_acc=0.7600 train=16.9s per_ep=0.169s gpu=27MB
+  [run ] IMDB-BINARY/gin/min
+         test_acc=0.7600 train=16.9s per_ep=0.169s gpu=26MB
+  [run ] ogbg-molhiv/gcn/avg
+Downloading http://snap.stanford.edu/ogb/data/graphproppred/csv_mol_download/hiv.zip
+  0%|          | 0/3 [00:00<?, ?it/s]Downloaded 0.00 GB:   0%|          | 0/3 [00:06<?, ?it/s]Downloaded 0.00 GB:  33%|███▎      | 1/3 [00:06<00:12,  6.05s/it]Downloaded 0.00 GB:  33%|███▎      | 1/3 [00:07<00:12,  6.05s/it]Downloaded 0.00 GB:  67%|██████▋   | 2/3 [00:07<00:03,  3.06s/it]Downloaded 0.00 GB:  67%|██████▋   | 2/3 [00:07<00:03,  3.06s/it]Downloaded 0.00 GB: 100%|██████████| 3/3 [00:07<00:00,  2.34s/it]
+Extracting F:\zhuomian\graph_beginner-main\任务三\data\hiv.zip
+Processing...
+Loading necessary files...
+This might take a while.
+Processing graphs...
+  0%|          | 0/41127 [00:00<?, ?it/s] 19%|█▊        | 7688/41127 [00:00<00:00, 76222.76it/s] 39%|███▊      | 15850/41127 [00:00<00:00, 79219.69it/s] 58%|█████▊    | 23991/41127 [00:00<00:00, 80031.61it/s] 79%|███████▉  | 32460/41127 [00:00<00:00, 81862.81it/s] 99%|█████████▉| 40861/41127 [00:00<00:00, 82367.26it/s]100%|██████████| 41127/41127 [00:00<00:00, 81239.07it/s]
+Converting graphs into PyG objects...
+  0%|          | 0/41127 [00:00<?, ?it/s] 10%|█         | 4261/41127 [00:00<00:00, 42523.05it/s] 21%|██        | 8514/41127 [00:00<00:01, 22806.13it/s] 31%|███       | 12813/41127 [00:00<00:00, 28962.30it/s] 41%|████▏     | 17009/41127 [00:00<00:00, 32879.32it/s] 50%|█████     | 20738/41127 [00:00<00:00, 22766.77it/s] 61%|██████    | 24997/41127 [00:00<00:00, 27150.31it/s] 70%|███████   | 28945/41127 [00:01<00:00, 30063.92it/s] 79%|███████▉  | 32650/41127 [00:01<00:00, 31844.60it/s] 88%|████████▊ | 36232/41127 [00:01<00:00, 22904.88it/s] 98%|█████████▊| 40463/41127 [00:01<00:00, 26944.18it/s]100%|██████████| 41127/41127 [00:01<00:00, 27495.86it/s]
+Saving...
+Done!
+C:\Users\lenono\.workbuddy\binaries\python\envs\gcn312\Lib\site-packages\ogb\graphproppred\dataset_pyg.py:68: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  self.data, self.slices = torch.load(self.processed_paths[0])
+  [FAIL] RuntimeError: Found dtype Long but expected Float
+  [run ] ogbg-molhiv/gcn/max
+C:\Users\lenono\.workbuddy\binaries\python\envs\gcn312\Lib\site-packages\ogb\graphproppred\dataset_pyg.py:68: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  self.data, self.slices = torch.load(self.processed_paths[0])
+  [FAIL] RuntimeError: Found dtype Long but expected Float
+  [run ] ogbg-molhiv/gcn/min
+C:\Users\lenono\.workbuddy\binaries\python\envs\gcn312\Lib\site-packages\ogb\graphproppred\dataset_pyg.py:68: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  self.data, self.slices = torch.load(self.processed_paths[0])
+  [FAIL] RuntimeError: Found dtype Long but expected Float
+  [run ] ogbg-molhiv/gat/avg
+C:\Users\lenono\.workbuddy\binaries\python\envs\gcn312\Lib\site-packages\ogb\graphproppred\dataset_pyg.py:68: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  self.data, self.slices = torch.load(self.processed_paths[0])
+  [FAIL] RuntimeError: expected mat1 and mat2 to have the same dtype, but got: __int64 != float
+  [run ] ogbg-molhiv/gat/max
+C:\Users\lenono\.workbuddy\binaries\python\envs\gcn312\Lib\site-packages\ogb\graphproppred\dataset_pyg.py:68: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  self.data, self.slices = torch.load(self.processed_paths[0])
+  [FAIL] RuntimeError: expected mat1 and mat2 to have the same dtype, but got: __int64 != float
+  [run ] ogbg-molhiv/gat/min
+C:\Users\lenono\.workbuddy\binaries\python\envs\gcn312\Lib\site-packages\ogb\graphproppred\dataset_pyg.py:68: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  self.data, self.slices = torch.load(self.processed_paths[0])
+  [FAIL] RuntimeError: expected mat1 and mat2 to have the same dtype, but got: __int64 != float
+  [run ] ogbg-molhiv/sage/avg
+C:\Users\lenono\.workbuddy\binaries\python\envs\gcn312\Lib\site-packages\ogb\graphproppred\dataset_pyg.py:68: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  self.data, self.slices = torch.load(self.processed_paths[0])
+  [FAIL] RuntimeError: expected mat1 and mat2 to have the same dtype, but got: __int64 != float
+  [run ] ogbg-molhiv/sage/max
+C:\Users\lenono\.workbuddy\binaries\python\envs\gcn312\Lib\site-packages\ogb\graphproppred\dataset_pyg.py:68: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  self.data, self.slices = torch.load(self.processed_paths[0])
+  [FAIL] RuntimeError: expected mat1 and mat2 to have the same dtype, but got: __int64 != float
+  [run ] ogbg-molhiv/sage/min
+C:\Users\lenono\.workbuddy\binaries\python\envs\gcn312\Lib\site-packages\ogb\graphproppred\dataset_pyg.py:68: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  self.data, self.slices = torch.load(self.processed_paths[0])
+  [FAIL] RuntimeError: expected mat1 and mat2 to have the same dtype, but got: __int64 != float
+  [run ] ogbg-molhiv/gin/avg
+C:\Users\lenono\.workbuddy\binaries\python\envs\gcn312\Lib\site-packages\ogb\graphproppred\dataset_pyg.py:68: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  self.data, self.slices = torch.load(self.processed_paths[0])
+         test_auc=0.5963 train=66.9s per_ep=1.114s gpu=49MB
+  [run ] ogbg-molhiv/gin/max
+C:\Users\lenono\.workbuddy\binaries\python\envs\gcn312\Lib\site-packages\ogb\graphproppred\dataset_pyg.py:68: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  self.data, self.slices = torch.load(self.processed_paths[0])
+         test_auc=0.6806 train=67.1s per_ep=1.118s gpu=49MB
+  [run ] ogbg-molhiv/gin/min
+C:\Users\lenono\.workbuddy\binaries\python\envs\gcn312\Lib\site-packages\ogb\graphproppred\dataset_pyg.py:68: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  self.data, self.slices = torch.load(self.processed_paths[0])
+         test_auc=0.6476 train=67.8s per_ep=1.129s gpu=49MB
+  -> F:\zhuomian\graph_beginner-main\results\task3_pooling.csv (15 条新记录)
+
+==============================================================================
+STAGE 2  网络层数消融（MUTAG, AvgPool）
+==============================================================================
+  [run ] MUTAG/gcn/L=2
+         test_acc=0.7500
+  [run ] MUTAG/gcn/L=3
+         test_acc=0.8000
+  [run ] MUTAG/gcn/L=4
+         test_acc=0.8500
+  [run ] MUTAG/gat/L=2
+         test_acc=0.8000
+  [run ] MUTAG/gat/L=3
+         test_acc=0.7500
+  [run ] MUTAG/gat/L=4
+         test_acc=0.8500
+  [run ] MUTAG/sage/L=2
+         test_acc=0.7500
+  [run ] MUTAG/sage/L=3
+         test_acc=0.8000
+  [run ] MUTAG/sage/L=4
+         test_acc=0.8000
+  [run ] MUTAG/gin/L=2
+         test_acc=0.9000
+  [run ] MUTAG/gin/L=3
+         test_acc=0.9500
+  [run ] MUTAG/gin/L=4
+         test_acc=0.9500
+  -> F:\zhuomian\graph_beginner-main\results\task3_layers.csv (12 条新记录)
+
+==============================================================================
+STAGE 3  学习率消融（MUTAG, AvgPool）
+==============================================================================
+  [run ] MUTAG/gcn/lr=0.1
+         test_acc=0.7000
+  [run ] MUTAG/gcn/lr=0.01
+         test_acc=0.8000
+  [run ] MUTAG/gcn/lr=0.001
+         test_acc=0.7000
+  [run ] MUTAG/gat/lr=0.1
+         test_acc=0.7000
+  [run ] MUTAG/gat/lr=0.01
+         test_acc=0.8000
+  [run ] MUTAG/gat/lr=0.001
+         test_acc=0.7500
+  [run ] MUTAG/sage/lr=0.1
+         test_acc=0.7000
+  [run ] MUTAG/sage/lr=0.01
+         test_acc=0.8000
+  [run ] MUTAG/sage/lr=0.001
+         test_acc=0.7000
+  [run ] MUTAG/gin/lr=0.1
+         test_acc=0.7000
+  [run ] MUTAG/gin/lr=0.01
+         test_acc=0.9000
+  [run ] MUTAG/gin/lr=0.001
+         test_acc=0.9500
+  -> F:\zhuomian\graph_beginner-main\results\task3_lr.csv (12 条新记录)
+
+全部完成，用时 740.6s
+device = cuda
+
+==============================================================================
+STAGE 1  池化方法对比：数据集 × 模型 × {AvgPool, MaxPool, MinPool}
+==============================================================================
+  [skip] MUTAG/gcn/avg
+  [skip] MUTAG/gcn/max
+  [skip] MUTAG/gcn/min
+  [skip] MUTAG/gat/avg
+  [skip] MUTAG/gat/max
+  [skip] MUTAG/gat/min
+  [skip] MUTAG/sage/avg
+  [skip] MUTAG/sage/max
+  [skip] MUTAG/sage/min
+  [skip] MUTAG/gin/avg
+  [skip] MUTAG/gin/max
+  [skip] MUTAG/gin/min
+  [skip] PROTEINS/gcn/avg
+  [skip] PROTEINS/gcn/max
+  [skip] PROTEINS/gcn/min
+  [skip] PROTEINS/gat/avg
+  [skip] PROTEINS/gat/max
+  [skip] PROTEINS/gat/min
+  [skip] PROTEINS/sage/avg
+  [skip] PROTEINS/sage/max
+  [skip] PROTEINS/sage/min
+  [skip] PROTEINS/gin/avg
+  [skip] PROTEINS/gin/max
+  [skip] PROTEINS/gin/min
+  [skip] IMDB-BINARY/gcn/avg
+  [skip] IMDB-BINARY/gcn/max
+  [skip] IMDB-BINARY/gcn/min
+  [skip] IMDB-BINARY/gat/avg
+  [skip] IMDB-BINARY/gat/max
+  [skip] IMDB-BINARY/gat/min
+  [skip] IMDB-BINARY/sage/avg
+  [skip] IMDB-BINARY/sage/max
+  [skip] IMDB-BINARY/sage/min
+  [skip] IMDB-BINARY/gin/avg
+  [skip] IMDB-BINARY/gin/max
+  [skip] IMDB-BINARY/gin/min
+  [run ] ogbg-molhiv/gcn/avg
+C:\Users\lenono\.workbuddy\binaries\python\envs\gcn312\Lib\site-packages\ogb\graphproppred\dataset_pyg.py:68: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  self.data, self.slices = torch.load(self.processed_paths[0])
+         test_auc=0.6113 train=71.4s per_ep=1.190s gpu=47MB
+  [run ] ogbg-molhiv/gcn/max
+C:\Users\lenono\.workbuddy\binaries\python\envs\gcn312\Lib\site-packages\ogb\graphproppred\dataset_pyg.py:68: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  self.data, self.slices = torch.load(self.processed_paths[0])
+         test_auc=0.6082 train=68.5s per_ep=1.142s gpu=47MB
+  [run ] ogbg-molhiv/gcn/min
+C:\Users\lenono\.workbuddy\binaries\python\envs\gcn312\Lib\site-packages\ogb\graphproppred\dataset_pyg.py:68: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  self.data, self.slices = torch.load(self.processed_paths[0])
+         test_auc=0.6773 train=67.4s per_ep=1.123s gpu=47MB
+  [run ] ogbg-molhiv/gat/avg
+C:\Users\lenono\.workbuddy\binaries\python\envs\gcn312\Lib\site-packages\ogb\graphproppred\dataset_pyg.py:68: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  self.data, self.slices = torch.load(self.processed_paths[0])
+         test_auc=0.6759 train=90.3s per_ep=1.505s gpu=162MB
+  [run ] ogbg-molhiv/gat/max
+C:\Users\lenono\.workbuddy\binaries\python\envs\gcn312\Lib\site-packages\ogb\graphproppred\dataset_pyg.py:68: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  self.data, self.slices = torch.load(self.processed_paths[0])
+         test_auc=0.6607 train=89.3s per_ep=1.489s gpu=161MB
+  [run ] ogbg-molhiv/gat/min
+C:\Users\lenono\.workbuddy\binaries\python\envs\gcn312\Lib\site-packages\ogb\graphproppred\dataset_pyg.py:68: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  self.data, self.slices = torch.load(self.processed_paths[0])
+         test_auc=0.6656 train=89.3s per_ep=1.488s gpu=161MB
+  [run ] ogbg-molhiv/sage/avg
+C:\Users\lenono\.workbuddy\binaries\python\envs\gcn312\Lib\site-packages\ogb\graphproppred\dataset_pyg.py:68: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  self.data, self.slices = torch.load(self.processed_paths[0])
+         test_auc=0.6263 train=61.9s per_ep=1.032s gpu=43MB
+  [run ] ogbg-molhiv/sage/max
+C:\Users\lenono\.workbuddy\binaries\python\envs\gcn312\Lib\site-packages\ogb\graphproppred\dataset_pyg.py:68: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  self.data, self.slices = torch.load(self.processed_paths[0])
+         test_auc=0.6823 train=61.7s per_ep=1.029s gpu=41MB
+  [run ] ogbg-molhiv/sage/min
+C:\Users\lenono\.workbuddy\binaries\python\envs\gcn312\Lib\site-packages\ogb\graphproppred\dataset_pyg.py:68: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  self.data, self.slices = torch.load(self.processed_paths[0])
+         test_auc=0.6809 train=61.1s per_ep=1.018s gpu=41MB
+  [run ] ogbg-molhiv/gin/avg
+C:\Users\lenono\.workbuddy\binaries\python\envs\gcn312\Lib\site-packages\ogb\graphproppred\dataset_pyg.py:68: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  self.data, self.slices = torch.load(self.processed_paths[0])
+         test_auc=0.6138 train=65.1s per_ep=1.085s gpu=46MB
+  [run ] ogbg-molhiv/gin/max
+C:\Users\lenono\.workbuddy\binaries\python\envs\gcn312\Lib\site-packages\ogb\graphproppred\dataset_pyg.py:68: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  self.data, self.slices = torch.load(self.processed_paths[0])
+         test_auc=0.6587 train=64.5s per_ep=1.074s gpu=46MB
+  [run ] ogbg-molhiv/gin/min
+C:\Users\lenono\.workbuddy\binaries\python\envs\gcn312\Lib\site-packages\ogb\graphproppred\dataset_pyg.py:68: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  self.data, self.slices = torch.load(self.processed_paths[0])
+         test_auc=0.6557 train=64.3s per_ep=1.072s gpu=47MB
+  -> F:\zhuomian\graph_beginner-main\results\task3_pooling.csv (12 条新记录)
+
+全部完成，用时 1028.8s

@@ -1,0 +1,24 @@
+{"preprocessing": {"records_seen": 800, "records_skipped": 0, "total_tokens": 204800, "supervised_tokens": 177636, "max_tokens": 256}, "usable": 800}
+{"trainable": 540672, "total": 494573440, "ratio": 0.001093, "device": "cuda"}
+{"step": 1, "loss": 5.58688, "lr": 3.333e-05, "tokens": 907, "elapsed_sec": 1.17, "gpu_allocated_mb": 1046.8}
+{"step": 20, "loss": 4.11586, "lr": 0.00019979, "tokens": 901, "elapsed_sec": 12.04, "gpu_allocated_mb": 1046.8}
+{"step": 40, "loss": 3.93025, "lr": 0.00019744, "tokens": 905, "elapsed_sec": 23.28, "gpu_allocated_mb": 1046.8}
+{"step": 60, "loss": 3.50097, "lr": 0.00019254, "tokens": 908, "elapsed_sec": 34.54, "gpu_allocated_mb": 1046.8}
+{"step": 80, "loss": 3.18883, "lr": 0.00018522, "tokens": 920, "elapsed_sec": 46.47, "gpu_allocated_mb": 1046.8}
+{"step": 100, "loss": 2.51893, "lr": 0.00017567, "tokens": 909, "elapsed_sec": 57.76, "gpu_allocated_mb": 1046.8}
+{"step": 120, "loss": 2.90874, "lr": 0.00016414, "tokens": 878, "elapsed_sec": 68.88, "gpu_allocated_mb": 1046.8}
+{"step": 140, "loss": 2.87084, "lr": 0.00015093, "tokens": 869, "elapsed_sec": 80.16, "gpu_allocated_mb": 1046.8}
+{"step": 160, "loss": 2.36393, "lr": 0.00013639, "tokens": 894, "elapsed_sec": 91.42, "gpu_allocated_mb": 1046.8}
+{"step": 180, "loss": 2.5303, "lr": 0.0001209, "tokens": 912, "elapsed_sec": 102.66, "gpu_allocated_mb": 1046.8}
+{"step": 200, "loss": 2.48987, "lr": 0.00010486, "tokens": 916, "elapsed_sec": 113.98, "gpu_allocated_mb": 1046.8}
+{"step": 220, "loss": 2.33015, "lr": 8.869e-05, "tokens": 901, "elapsed_sec": 125.25, "gpu_allocated_mb": 1046.8}
+{"step": 240, "loss": 2.16178, "lr": 7.282e-05, "tokens": 905, "elapsed_sec": 136.44, "gpu_allocated_mb": 1046.8}
+{"step": 260, "loss": 2.34056, "lr": 5.766e-05, "tokens": 908, "elapsed_sec": 147.59, "gpu_allocated_mb": 1046.8}
+{"step": 280, "loss": 2.27286, "lr": 4.36e-05, "tokens": 920, "elapsed_sec": 158.82, "gpu_allocated_mb": 1046.8}
+{"step": 300, "loss": 1.83978, "lr": 3.103e-05, "tokens": 909, "elapsed_sec": 170.04, "gpu_allocated_mb": 1046.8}
+{"step": 320, "loss": 2.43404, "lr": 2.026e-05, "tokens": 878, "elapsed_sec": 181.25, "gpu_allocated_mb": 1046.8}
+{"step": 340, "loss": 2.46753, "lr": 1.157e-05, "tokens": 869, "elapsed_sec": 195.09, "gpu_allocated_mb": 1046.8}
+{"step": 360, "loss": 2.01441, "lr": 1e-05, "tokens": 894, "elapsed_sec": 206.48, "gpu_allocated_mb": 1046.8}
+{"step": 380, "loss": 2.29058, "lr": 1e-05, "tokens": 912, "elapsed_sec": 217.73, "gpu_allocated_mb": 1046.8}
+{"step": 400, "loss": 2.29427, "lr": 1e-05, "tokens": 916, "elapsed_sec": 229.04, "gpu_allocated_mb": 1046.8}
+Saved SFT LoRA adapter to ckpt\sft

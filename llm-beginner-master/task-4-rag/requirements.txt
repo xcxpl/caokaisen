@@ -1,0 +1,12 @@
+torch>=2.1
+transformers>=4.40
+faiss-cpu>=1.7
+pypdf>=4.0
+numpy>=1.23
+pandas>=2.0
+tqdm>=4.65
+huggingface_hub>=0.20
+requests>=2.31
+# 可选：
+# sentence-transformers>=2.7   # 本实现直接用 transformers，不依赖它
+# ragas>=0.1

@@ -1,0 +1,464 @@
+device = cuda
+gpu    = NVIDIA GeForce RTX 3050 Laptop GPU
+
+==============================================================================
+STAGE 1  主对比：数据集 × 模型 × 训练模式
+==============================================================================
+  [skip] Cora/gcn/full/s0
+  [skip] Cora/gcn/sample/s0
+  [skip] Cora/gat/full/s0
+  [skip] Cora/gat/sample/s0
+  [skip] Cora/sage/full/s0
+  [skip] Cora/sage/sample/s0
+  [skip] Cora/gin/full/s0
+  [skip] Cora/gin/sample/s0
+  [skip] Citeseer/gcn/full/s0
+  [skip] Citeseer/gcn/sample/s0
+  [skip] Citeseer/gat/full/s0
+  [skip] Citeseer/gat/sample/s0
+  [skip] Citeseer/sage/full/s0
+  [skip] Citeseer/sage/sample/s0
+  [skip] Citeseer/gin/full/s0
+  [skip] Citeseer/gin/sample/s0
+  [skip] Amazon/gcn/full/s0
+  [skip] Amazon/gcn/full/s1
+  [run ] Amazon/gcn/full/s2
+         test_acc=0.7947 train=7.4s per_ep=0.074s gpu=352MB
+  [run ] Amazon/gcn/full/s3
+         test_acc=0.8052 train=6.3s per_ep=0.063s gpu=352MB
+  [run ] Amazon/gcn/full/s4
+         test_acc=0.7957 train=6.4s per_ep=0.064s gpu=352MB
+  [run ] Amazon/gcn/full/s5
+         test_acc=0.7724 train=6.2s per_ep=0.062s gpu=352MB
+  [run ] Amazon/gcn/full/s6
+         test_acc=0.6927 train=6.4s per_ep=0.064s gpu=352MB
+  [run ] Amazon/gcn/full/s7
+         test_acc=0.7953 train=6.4s per_ep=0.064s gpu=352MB
+  [run ] Amazon/gcn/full/s8
+         test_acc=0.8048 train=6.3s per_ep=0.063s gpu=352MB
+  [run ] Amazon/gcn/full/s9
+         test_acc=0.7956 train=5.5s per_ep=0.055s gpu=352MB
+  [skip] Amazon/gcn/sample/s0
+  [run ] Amazon/gcn/sample/s1
+         test_acc=0.6816 train=1.6s per_ep=0.016s gpu=353MB
+  [run ] Amazon/gcn/sample/s2
+         test_acc=0.6954 train=1.4s per_ep=0.014s gpu=402MB
+  [run ] Amazon/gcn/sample/s3
+         test_acc=0.5654 train=1.3s per_ep=0.013s gpu=449MB
+  [run ] Amazon/gcn/sample/s4
+         test_acc=0.7714 train=1.2s per_ep=0.012s gpu=498MB
+  [run ] Amazon/gcn/sample/s5
+         test_acc=0.4181 train=1.3s per_ep=0.013s gpu=546MB
+  [run ] Amazon/gcn/sample/s6
+         test_acc=0.7405 train=1.2s per_ep=0.012s gpu=401MB
+  [run ] Amazon/gcn/sample/s7
+         test_acc=0.7587 train=1.2s per_ep=0.012s gpu=449MB
+  [run ] Amazon/gcn/sample/s8
+         test_acc=0.7189 train=1.2s per_ep=0.012s gpu=499MB
+  [run ] Amazon/gcn/sample/s9
+         test_acc=0.7981 train=1.3s per_ep=0.013s gpu=546MB
+  [run ] Amazon/gat/full/s0
+         test_acc=0.7873 train=3.8s per_ep=0.038s gpu=833MB
+  [run ] Amazon/gat/full/s1
+         test_acc=0.7923 train=3.8s per_ep=0.038s gpu=833MB
+  [run ] Amazon/gat/full/s2
+         test_acc=0.8108 train=3.8s per_ep=0.038s gpu=833MB
+  [run ] Amazon/gat/full/s3
+         test_acc=0.8106 train=4.2s per_ep=0.043s gpu=833MB
+  [run ] Amazon/gat/full/s4
+         test_acc=0.7720 train=3.7s per_ep=0.037s gpu=833MB
+  [run ] Amazon/gat/full/s5
+         test_acc=0.7841 train=3.7s per_ep=0.037s gpu=833MB
+  [run ] Amazon/gat/full/s6
+         test_acc=0.8070 train=3.8s per_ep=0.038s gpu=833MB
+  [run ] Amazon/gat/full/s7
+         test_acc=0.8193 train=3.7s per_ep=0.037s gpu=833MB
+  [run ] Amazon/gat/full/s8
+         test_acc=0.8261 train=3.8s per_ep=0.038s gpu=833MB
+  [run ] Amazon/gat/full/s9
+         test_acc=0.8235 train=3.8s per_ep=0.038s gpu=833MB
+  [run ] Amazon/gat/sample/s0
+         test_acc=0.7934 train=1.7s per_ep=0.017s gpu=450MB
+  [run ] Amazon/gat/sample/s1
+         test_acc=0.8206 train=1.6s per_ep=0.016s gpu=355MB
+  [run ] Amazon/gat/sample/s2
+         test_acc=0.8033 train=1.7s per_ep=0.017s gpu=402MB
+  [run ] Amazon/gat/sample/s3
+         test_acc=0.8406 train=1.6s per_ep=0.016s gpu=450MB
+  [run ] Amazon/gat/sample/s4
+         test_acc=0.7902 train=1.6s per_ep=0.015s gpu=498MB
+  [run ] Amazon/gat/sample/s5
+         test_acc=0.8212 train=1.6s per_ep=0.016s gpu=402MB
+  [run ] Amazon/gat/sample/s6
+         test_acc=0.7323 train=1.6s per_ep=0.016s gpu=450MB
+  [run ] Amazon/gat/sample/s7
+         test_acc=0.7911 train=1.6s per_ep=0.016s gpu=498MB
+  [run ] Amazon/gat/sample/s8
+         test_acc=0.7913 train=1.6s per_ep=0.016s gpu=546MB
+  [run ] Amazon/gat/sample/s9
+         test_acc=0.8234 train=1.7s per_ep=0.017s gpu=450MB
+  [run ] Amazon/sage/full/s0
+         test_acc=0.7285 train=5.7s per_ep=0.057s gpu=1731MB
+  [run ] Amazon/sage/full/s1
+         test_acc=0.7269 train=6.0s per_ep=0.060s gpu=1731MB
+  [run ] Amazon/sage/full/s2
+         test_acc=0.5680 train=5.9s per_ep=0.059s gpu=1731MB
+  [run ] Amazon/sage/full/s3
+         test_acc=0.6810 train=5.9s per_ep=0.059s gpu=1731MB
+  [run ] Amazon/sage/full/s4
+         test_acc=0.7711 train=5.9s per_ep=0.059s gpu=1731MB
+  [run ] Amazon/sage/full/s5
+         test_acc=0.7684 train=6.0s per_ep=0.060s gpu=1731MB
+  [run ] Amazon/sage/full/s6
+         test_acc=0.5564 train=6.0s per_ep=0.060s gpu=1731MB
+  [run ] Amazon/sage/full/s7
+         test_acc=0.7710 train=6.0s per_ep=0.060s gpu=1731MB
+  [run ] Amazon/sage/full/s8
+         test_acc=0.7512 train=6.0s per_ep=0.060s gpu=1731MB
+  [run ] Amazon/sage/full/s9
+         test_acc=0.7443 train=6.0s per_ep=0.060s gpu=1731MB
+  [run ] Amazon/sage/sample/s0
+         test_acc=0.7252 train=1.0s per_ep=0.010s gpu=1749MB
+  [run ] Amazon/sage/sample/s1
+         test_acc=0.7744 train=1.0s per_ep=0.010s gpu=1798MB
+  [run ] Amazon/sage/sample/s2
+         test_acc=0.7382 train=1.0s per_ep=0.010s gpu=1750MB
+  [run ] Amazon/sage/sample/s3
+         test_acc=0.7760 train=1.0s per_ep=0.010s gpu=1798MB
+  [run ] Amazon/sage/sample/s4
+         test_acc=0.7326 train=1.0s per_ep=0.010s gpu=1846MB
+  [run ] Amazon/sage/sample/s5
+         test_acc=0.7988 train=1.0s per_ep=0.010s gpu=1894MB
+  [run ] Amazon/sage/sample/s6
+         test_acc=0.7572 train=1.0s per_ep=0.010s gpu=1798MB
+  [run ] Amazon/sage/sample/s7
+         test_acc=0.7926 train=1.0s per_ep=0.010s gpu=1846MB
+  [run ] Amazon/sage/sample/s8
+         test_acc=0.6936 train=1.0s per_ep=0.010s gpu=1894MB
+  [run ] Amazon/sage/sample/s9
+         test_acc=0.7676 train=1.1s per_ep=0.011s gpu=1944MB
+  [run ] Amazon/gin/full/s0
+         test_acc=0.2131 train=6.3s per_ep=0.063s gpu=1786MB
+  [run ] Amazon/gin/full/s1
+         test_acc=0.1975 train=6.3s per_ep=0.063s gpu=1786MB
+  [run ] Amazon/gin/full/s2
+         test_acc=0.1937 train=6.3s per_ep=0.063s gpu=1786MB
+  [run ] Amazon/gin/full/s3
+         test_acc=0.2391 train=6.3s per_ep=0.063s gpu=1786MB
+  [run ] Amazon/gin/full/s4
+         test_acc=0.1570 train=6.2s per_ep=0.062s gpu=1786MB
+  [run ] Amazon/gin/full/s5
+         test_acc=0.1376 train=6.3s per_ep=0.063s gpu=1786MB
+  [run ] Amazon/gin/full/s6
+         test_acc=0.3212 train=6.3s per_ep=0.063s gpu=1786MB
+  [run ] Amazon/gin/full/s7
+         test_acc=0.2390 train=6.3s per_ep=0.063s gpu=1786MB
+  [run ] Amazon/gin/full/s8
+         test_acc=0.2367 train=6.3s per_ep=0.063s gpu=1786MB
+  [run ] Amazon/gin/full/s9
+         test_acc=0.4725 train=6.3s per_ep=0.063s gpu=1786MB
+  [run ] Amazon/gin/sample/s0
+         test_acc=0.7360 train=1.1s per_ep=0.011s gpu=1805MB
+  [run ] Amazon/gin/sample/s1
+         test_acc=0.6829 train=1.2s per_ep=0.012s gpu=1854MB
+  [run ] Amazon/gin/sample/s2
+         test_acc=0.7194 train=1.1s per_ep=0.011s gpu=1902MB
+  [run ] Amazon/gin/sample/s3
+         test_acc=0.7409 train=1.1s per_ep=0.011s gpu=1612MB
+  [run ] Amazon/gin/sample/s4
+         test_acc=0.6425 train=1.1s per_ep=0.011s gpu=1660MB
+  [run ] Amazon/gin/sample/s5
+         test_acc=0.7303 train=1.1s per_ep=0.011s gpu=1709MB
+  [run ] Amazon/gin/sample/s6
+         test_acc=0.7006 train=1.1s per_ep=0.011s gpu=1660MB
+  [run ] Amazon/gin/sample/s7
+         test_acc=0.6892 train=1.1s per_ep=0.011s gpu=1708MB
+  [run ] Amazon/gin/sample/s8
+         test_acc=0.7053 train=1.1s per_ep=0.011s gpu=1757MB
+  [run ] Amazon/gin/sample/s9
+         test_acc=0.6694 train=1.1s per_ep=0.011s gpu=1709MB
+  -> F:\zhuomian\graph_beginner-main\results\task1_main.csv (77 条新记录)
+
+==============================================================================
+STAGE 2  学习率消融（Cora, 全图训练）
+==============================================================================
+  [run ] Cora/gcn/lr=0.1
+         test_acc=0.7680
+  [run ] Cora/gcn/lr=0.01
+         test_acc=0.7710
+  [run ] Cora/gcn/lr=0.001
+         test_acc=0.7670
+  [run ] Cora/gat/lr=0.1
+         test_acc=0.7750
+  [run ] Cora/gat/lr=0.01
+         test_acc=0.7640
+  [run ] Cora/gat/lr=0.001
+         test_acc=0.7650
+  [run ] Cora/sage/lr=0.1
+         test_acc=0.7430
+  [run ] Cora/sage/lr=0.01
+         test_acc=0.7610
+  [run ] Cora/sage/lr=0.001
+         test_acc=0.7640
+  [run ] Cora/gin/lr=0.1
+         test_acc=0.4900
+  [run ] Cora/gin/lr=0.01
+         test_acc=0.7720
+  [run ] Cora/gin/lr=0.001
+         test_acc=0.7090
+  -> F:\zhuomian\graph_beginner-main\results\task1_lr.csv (12 条新记录)
+
+==============================================================================
+STAGE 3  网络层数消融（Cora, 全图训练）
+==============================================================================
+  [run ] Cora/gcn/layers=1
+         test_acc=0.7690
+  [run ] Cora/gcn/layers=2
+         test_acc=0.7710
+  [run ] Cora/gcn/layers=3
+         test_acc=0.7230
+  [run ] Cora/gat/layers=1
+         test_acc=0.7560
+  [run ] Cora/gat/layers=2
+         test_acc=0.7630
+  [run ] Cora/gat/layers=3
+         test_acc=0.7590
+  [run ] Cora/sage/layers=1
+         test_acc=0.7280
+  [run ] Cora/sage/layers=2
+         test_acc=0.7610
+  [run ] Cora/sage/layers=3
+         test_acc=0.7770
+  [run ] Cora/gin/layers=1
+         test_acc=0.7510
+  [run ] Cora/gin/layers=2
+         test_acc=0.7720
+  [run ] Cora/gin/layers=3
+         test_acc=0.7470
+  -> F:\zhuomian\graph_beginner-main\results\task1_layers.csv (12 条新记录)
+
+==============================================================================
+STAGE 4  采样参数消融（Cora, GCN, 子图采样训练）
+==============================================================================
+  [run ] Cora/gcn/sample bs=256 nb=5
+         test_acc=0.7670 per_ep=0.009s
+  [run ] Cora/gcn/sample bs=256 nb=10
+         test_acc=0.7770 per_ep=0.010s
+  [run ] Cora/gcn/sample bs=256 nb=20
+         test_acc=0.7950 per_ep=0.009s
+  [run ] Cora/gcn/sample bs=1024 nb=5
+         test_acc=0.7670 per_ep=0.009s
+  [run ] Cora/gcn/sample bs=1024 nb=10
+         test_acc=0.7770 per_ep=0.009s
+  [run ] Cora/gcn/sample bs=1024 nb=20
+         test_acc=0.7950 per_ep=0.009s
+  [run ] Cora/gcn/sample bs=4096 nb=5
+         test_acc=0.7670 per_ep=0.010s
+  [run ] Cora/gcn/sample bs=4096 nb=10
+         test_acc=0.7770 per_ep=0.009s
+  [run ] Cora/gcn/sample bs=4096 nb=20
+         test_acc=0.7950 per_ep=0.010s
+  -> F:\zhuomian\graph_beginner-main\results\task1_sampler.csv (9 条新记录)
+
+全部完成，用时 777.2s
+device = cuda
+gpu    = NVIDIA GeForce RTX 3050 Laptop GPU
+
+==============================================================================
+STAGE 5  补充：Amazon × GIN × 全图训练 × lr ∈ {1e-2, 1e-3, 1e-4}
+==============================================================================
+  [run ] Amazon/gin/full lr=0.01 s0
+         test_acc=0.2458 val_acc=0.4200
+  [run ] Amazon/gin/full lr=0.01 s1
+         test_acc=0.1585 val_acc=0.3033
+  [run ] Amazon/gin/full lr=0.001 s0
+         test_acc=0.5925 val_acc=0.6133
+  [run ] Amazon/gin/full lr=0.001 s1
+         test_acc=0.5629 val_acc=0.7000
+  [run ] Amazon/gin/full lr=0.0001 s0
+         test_acc=0.5137 val_acc=0.6000
+  [run ] Amazon/gin/full lr=0.0001 s1
+         test_acc=0.5772 val_acc=0.6533
+  -> F:\zhuomian\graph_beginner-main\results\task1_gin_amazon_lr.csv (6 条新记录)
+
+全部完成，用时 83.8s
+device = cuda
+gpu    = NVIDIA GeForce RTX 3050 Laptop GPU
+
+==============================================================================
+STAGE 4  采样参数消融（Cora, GCN, 子图采样训练）
+==============================================================================
+  [run ] Cora/gcn/sample bs=16 nb=5
+         test_acc=0.7730 per_ep=0.085s
+  [run ] Cora/gcn/sample bs=16 nb=10
+         test_acc=0.7740 per_ep=0.079s
+  [run ] Cora/gcn/sample bs=16 nb=20
+         test_acc=0.7690 per_ep=0.082s
+  [run ] Cora/gcn/sample bs=32 nb=5
+         test_acc=0.7530 per_ep=0.045s
+  [run ] Cora/gcn/sample bs=32 nb=10
+         test_acc=0.7770 per_ep=0.047s
+  [run ] Cora/gcn/sample bs=32 nb=20
+         test_acc=0.7890 per_ep=0.050s
+  [run ] Cora/gcn/sample bs=64 nb=5
+         test_acc=0.7820 per_ep=0.028s
+  [run ] Cora/gcn/sample bs=64 nb=10
+         test_acc=0.7990 per_ep=0.029s
+  [run ] Cora/gcn/sample bs=64 nb=20
+         test_acc=0.7650 per_ep=0.027s
+  -> F:\zhuomian\graph_beginner-main\results\task1_sampler.csv (9 条新记录)
+
+全部完成，用时 116.9s
+device = cuda
+gpu    = NVIDIA GeForce RTX 3050 Laptop GPU
+
+==============================================================================
+STAGE 1  主对比：数据集 × 模型 × 训练模式
+==============================================================================
+  [skip] Cora/gcn/full/s0
+  [run ] Cora/gcn/sample/s0
+         test_acc=0.7960 train=6.4s per_ep=0.032s gpu=44MB
+  [skip] Cora/gat/full/s0
+  [run ] Cora/gat/sample/s0
+         test_acc=0.7770 train=7.9s per_ep=0.039s gpu=109MB
+  [skip] Cora/sage/full/s0
+  [run ] Cora/sage/sample/s0
+         test_acc=0.7750 train=4.5s per_ep=0.022s gpu=123MB
+  [skip] Cora/gin/full/s0
+  [run ] Cora/gin/sample/s0
+         test_acc=0.7740 train=4.8s per_ep=0.024s gpu=107MB
+  [skip] Citeseer/gcn/full/s0
+  [run ] Citeseer/gcn/sample/s0
+         test_acc=0.6720 train=3.9s per_ep=0.020s gpu=100MB
+  [skip] Citeseer/gat/full/s0
+  [run ] Citeseer/gat/sample/s0
+         test_acc=0.6470 train=5.8s per_ep=0.029s gpu=226MB
+  [skip] Citeseer/sage/full/s0
+  [run ] Citeseer/sage/sample/s0
+         test_acc=0.6640 train=3.4s per_ep=0.017s gpu=316MB
+  [skip] Citeseer/gin/full/s0
+  [run ] Citeseer/gin/sample/s0
+         test_acc=0.6230 train=3.6s per_ep=0.018s gpu=299MB
+  [skip] Amazon/gcn/full/s0
+  [skip] Amazon/gcn/full/s1
+  [skip] Amazon/gcn/full/s2
+  [skip] Amazon/gcn/full/s3
+  [skip] Amazon/gcn/full/s4
+  [skip] Amazon/gcn/full/s5
+  [skip] Amazon/gcn/full/s6
+  [skip] Amazon/gcn/full/s7
+  [skip] Amazon/gcn/full/s8
+  [skip] Amazon/gcn/full/s9
+  [run ] Amazon/gcn/sample/s0
+         test_acc=0.7704 train=4.6s per_ep=0.046s gpu=430MB
+  [run ] Amazon/gcn/sample/s1
+         test_acc=0.8209 train=4.6s per_ep=0.046s gpu=478MB
+  [run ] Amazon/gcn/sample/s2
+         test_acc=0.7249 train=4.6s per_ep=0.046s gpu=337MB
+  [run ] Amazon/gcn/sample/s3
+         test_acc=0.7388 train=4.4s per_ep=0.044s gpu=384MB
+  [run ] Amazon/gcn/sample/s4
+         test_acc=0.7443 train=4.4s per_ep=0.044s gpu=432MB
+  [run ] Amazon/gcn/sample/s5
+         test_acc=0.7048 train=4.4s per_ep=0.044s gpu=481MB
+  [run ] Amazon/gcn/sample/s6
+         test_acc=0.7636 train=4.3s per_ep=0.043s gpu=529MB
+  [run ] Amazon/gcn/sample/s7
+         test_acc=0.7013 train=4.3s per_ep=0.043s gpu=384MB
+  [run ] Amazon/gcn/sample/s8
+         test_acc=0.5431 train=4.4s per_ep=0.044s gpu=432MB
+  [run ] Amazon/gcn/sample/s9
+         test_acc=0.7394 train=4.3s per_ep=0.043s gpu=480MB
+  [skip] Amazon/gat/full/s0
+  [skip] Amazon/gat/full/s1
+  [skip] Amazon/gat/full/s2
+  [skip] Amazon/gat/full/s3
+  [skip] Amazon/gat/full/s4
+  [skip] Amazon/gat/full/s5
+  [skip] Amazon/gat/full/s6
+  [skip] Amazon/gat/full/s7
+  [skip] Amazon/gat/full/s8
+  [skip] Amazon/gat/full/s9
+  [run ] Amazon/gat/sample/s0
+         test_acc=0.8028 train=5.9s per_ep=0.059s gpu=529MB
+  [run ] Amazon/gat/sample/s1
+         test_acc=0.8122 train=5.9s per_ep=0.059s gpu=432MB
+  [run ] Amazon/gat/sample/s2
+         test_acc=0.8153 train=5.9s per_ep=0.059s gpu=480MB
+  [run ] Amazon/gat/sample/s3
+         test_acc=0.8378 train=5.8s per_ep=0.058s gpu=529MB
+  [run ] Amazon/gat/sample/s4
+         test_acc=0.8323 train=5.9s per_ep=0.059s gpu=576MB
+  [run ] Amazon/gat/sample/s5
+         test_acc=0.8082 train=5.9s per_ep=0.059s gpu=480MB
+  [run ] Amazon/gat/sample/s6
+         test_acc=0.8133 train=5.9s per_ep=0.059s gpu=529MB
+  [run ] Amazon/gat/sample/s7
+         test_acc=0.7870 train=5.9s per_ep=0.059s gpu=576MB
+  [run ] Amazon/gat/sample/s8
+         test_acc=0.8110 train=6.0s per_ep=0.060s gpu=625MB
+  [run ] Amazon/gat/sample/s9
+         test_acc=0.8449 train=5.9s per_ep=0.059s gpu=528MB
+  [skip] Amazon/sage/full/s0
+  [skip] Amazon/sage/full/s1
+  [skip] Amazon/sage/full/s2
+  [skip] Amazon/sage/full/s3
+  [skip] Amazon/sage/full/s4
+  [skip] Amazon/sage/full/s5
+  [skip] Amazon/sage/full/s6
+  [skip] Amazon/sage/full/s7
+  [skip] Amazon/sage/full/s8
+  [skip] Amazon/sage/full/s9
+  [run ] Amazon/sage/sample/s0
+         test_acc=0.7656 train=4.1s per_ep=0.041s gpu=1829MB
+  [run ] Amazon/sage/sample/s1
+         test_acc=0.7837 train=4.1s per_ep=0.041s gpu=1877MB
+  [run ] Amazon/sage/sample/s2
+         test_acc=0.7431 train=4.0s per_ep=0.040s gpu=1926MB
+  [run ] Amazon/sage/sample/s3
+         test_acc=0.7972 train=4.0s per_ep=0.040s gpu=1829MB
+  [run ] Amazon/sage/sample/s4
+         test_acc=0.7968 train=3.9s per_ep=0.039s gpu=1877MB
+  [run ] Amazon/sage/sample/s5
+         test_acc=0.7731 train=3.9s per_ep=0.039s gpu=1926MB
+  [run ] Amazon/sage/sample/s6
+         test_acc=0.7883 train=4.0s per_ep=0.040s gpu=1974MB
+  [run ] Amazon/sage/sample/s7
+         test_acc=0.8001 train=4.0s per_ep=0.040s gpu=1878MB
+  [run ] Amazon/sage/sample/s8
+         test_acc=0.7529 train=4.1s per_ep=0.041s gpu=1926MB
+  [run ] Amazon/sage/sample/s9
+         test_acc=0.8132 train=4.0s per_ep=0.040s gpu=1974MB
+  [skip] Amazon/gin/full/s0
+  [skip] Amazon/gin/full/s1
+  [skip] Amazon/gin/full/s2
+  [skip] Amazon/gin/full/s3
+  [skip] Amazon/gin/full/s4
+  [skip] Amazon/gin/full/s5
+  [skip] Amazon/gin/full/s6
+  [skip] Amazon/gin/full/s7
+  [skip] Amazon/gin/full/s8
+  [skip] Amazon/gin/full/s9
+  [run ] Amazon/gin/sample/s0
+         test_acc=0.5993 train=4.4s per_ep=0.044s gpu=1885MB
+  [run ] Amazon/gin/sample/s1
+         test_acc=0.6866 train=4.3s per_ep=0.043s gpu=1934MB
+  [run ] Amazon/gin/sample/s2
+         test_acc=0.6872 train=4.3s per_ep=0.043s gpu=1983MB
+  [run ] Amazon/gin/sample/s3
+         test_acc=0.6534 train=4.2s per_ep=0.042s gpu=1934MB
+  [run ] Amazon/gin/sample/s4
+         test_acc=0.6526 train=4.2s per_ep=0.042s gpu=1983MB
+  [run ] Amazon/gin/sample/s5
+         test_acc=0.6963 train=4.2s per_ep=0.042s gpu=2031MB
+  [run ] Amazon/gin/sample/s6
+         test_acc=0.6804 train=4.2s per_ep=0.042s gpu=1982MB
+  [run ] Amazon/gin/sample/s7
+         test_acc=0.6843 train=4.2s per_ep=0.042s gpu=2031MB
+  [run ] Amazon/gin/sample/s8
+         test_acc=0.7396 train=4.3s per_ep=0.043s gpu=2080MB
+  [run ] Amazon/gin/sample/s9
+         test_acc=0.7407 train=4.2s per_ep=0.042s gpu=2031MB
+  -> F:\zhuomian\graph_beginner-main\results\task1_main.csv (48 条新记录)
+
+全部完成，用时 404.3s

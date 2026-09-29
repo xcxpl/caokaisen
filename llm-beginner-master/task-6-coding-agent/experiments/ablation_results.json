@@ -1,0 +1,132 @@
+{
+  "backend": "local-transformers:F:\\zhuomian\\llm-beginner-master\\task-4-rag\\models\\Qwen2.5-0.5B-Instruct",
+  "note": "toy-repo 上四种配置各跑 1 次（temperature=0，确定性解码）",
+  "conditions": [
+    {
+      "condition": "single_no_skill",
+      "label": "单 agent（无 Skill / 无 Subagent）",
+      "config": {
+        "use_skills": false,
+        "use_subagents": false
+      },
+      "tests_passed": true,
+      "steps": 5,
+      "model_steps": 1,
+      "script_steps": 2,
+      "subagent_calls": 0,
+      "subagent_steps": 0,
+      "skills_loaded": [],
+      "patch_chars": 259,
+      "duration_s": 16.7,
+      "stopped_by": "tests_passed",
+      "error": null
+    },
+    {
+      "condition": "skill_only",
+      "label": "+Skill（无 Subagent）",
+      "config": {
+        "use_skills": true,
+        "use_subagents": false
+      },
+      "tests_passed": true,
+      "steps": 7,
+      "model_steps": 2,
+      "script_steps": 1,
+      "subagent_calls": 0,
+      "subagent_steps": 0,
+      "skills_loaded": [
+        "test-runner",
+        "bug-fix"
+      ],
+      "patch_chars": 259,
+      "duration_s": 31.5,
+      "stopped_by": "tests_passed",
+      "error": null
+    },
+    {
+      "condition": "subagent_only",
+      "label": "+Subagent（无 Skill）",
+      "config": {
+        "use_skills": false,
+        "use_subagents": true
+      },
+      "tests_passed": true,
+      "steps": 6,
+      "model_steps": 1,
+      "script_steps": 2,
+      "subagent_calls": 2,
+      "subagent_steps": 4,
+      "skills_loaded": [],
+      "patch_chars": 259,
+      "duration_s": 14.7,
+      "stopped_by": "tests_passed",
+      "error": null
+    },
+    {
+      "condition": "full_stack",
+      "label": "完整三层栈（Skill + Subagent）",
+      "config": {
+        "use_skills": true,
+        "use_subagents": true
+      },
+      "tests_passed": true,
+      "steps": 5,
+      "model_steps": 1,
+      "script_steps": 2,
+      "subagent_calls": 2,
+      "subagent_steps": 4,
+      "skills_loaded": [
+        "test-runner",
+        "bug-fix"
+      ],
+      "patch_chars": 259,
+      "duration_s": 19.8,
+      "stopped_by": "tests_passed",
+      "error": null
+    },
+    {
+      "condition": "model_only_bare",
+      "label": "纯模型（无 Skill / 无 Subagent / 无兜底）",
+      "config": {
+        "use_skills": false,
+        "use_subagents": false,
+        "use_planner": false
+      },
+      "tests_passed": true,
+      "steps": 5,
+      "model_steps": 3,
+      "script_steps": 0,
+      "subagent_calls": 0,
+      "subagent_steps": 0,
+      "skills_loaded": [],
+      "patch_chars": 259,
+      "duration_s": 17.8,
+      "stopped_by": "tests_passed",
+      "error": null
+    },
+    {
+      "condition": "model_only_skill",
+      "label": "纯模型 + Skill（无 Subagent / 无兜底）",
+      "config": {
+        "use_skills": true,
+        "use_subagents": false,
+        "use_planner": false
+      },
+      "tests_passed": false,
+      "steps": 4,
+      "model_steps": 2,
+      "script_steps": 0,
+      "subagent_calls": 0,
+      "subagent_steps": 0,
+      "skills_loaded": [
+        "test-runner",
+        "bug-fix"
+      ],
+      "patch_chars": 0,
+      "duration_s": 25.8,
+      "stopped_by": "step_budget",
+      "error": null
+    }
+  ],
+  "trace_file": "eval\\trace_toy_repo.json"
+}

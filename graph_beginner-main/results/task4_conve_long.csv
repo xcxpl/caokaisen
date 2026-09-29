@@ -1,0 +1,2 @@
+﻿task,dataset,model,dim,lr,epochs,batch_size,neg_num,num_entities,num_relations,train_triples,valid_triples,test_triples,n_params,valid_mrr,valid_hits@10,test_mrr,test_hits@1,test_hits@3,test_hits@10,train_time_s,time_per_epoch_s,peak_gpu_mb,seed
+knowledge_graph,wn18rr,conve,200,0.001,200,128,1,40943,11,86835,3034,3134,10265386,0.1965,0.384,0.2004,0.0877,0.2897,0.3797,1683.03,8.4152,282.0,42

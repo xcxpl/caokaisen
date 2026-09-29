@@ -1,0 +1,5 @@
+{"preprocessing": {"seen": 128, "skipped": 118, "usable": 10}, "usable": 10}
+{"trainable": 540672, "total": 494573440, "ratio": 0.001093, "reference": "frozen SFT LoRA tensors"}
+{"step": 1, "loss": 0.69315, "reward_margin": 0.0, "lr": 5e-05, "elapsed_sec": 1.32, "gpu_allocated_mb": 974.7}
+{"step": 2, "loss": 0.69103, "reward_margin": 0.00424, "lr": 2.5e-06, "elapsed_sec": 1.7, "gpu_allocated_mb": 974.7}
+Saved DPO LoRA adapter to ckpt\dpo_smoke

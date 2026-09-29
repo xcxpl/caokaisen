@@ -1,0 +1,13 @@
+﻿task,dataset,model,pool,num_layers,hidden,lr,epochs,batch_size,n_graphs_train,n_graphs_val,n_graphs_test,n_params,val_metric,test_acc,train_time_s,loop_time_s,time_per_epoch_s,wall_time_s,peak_gpu_mb,seed
+graph_classification,MUTAG,gcn,avg,3,64,0.1,100,32,150,18,20,13378,0.6111,0.7,6.95,7.86,0.0695,7.86,18.9,42
+graph_classification,MUTAG,gcn,avg,3,64,0.01,100,32,150,18,20,13378,0.8333,0.8,6.87,7.77,0.0687,7.77,19.0,42
+graph_classification,MUTAG,gcn,avg,3,64,0.001,100,32,150,18,20,13378,0.7778,0.7,6.93,7.85,0.0693,7.85,18.9,42
+graph_classification,MUTAG,gat,avg,3,64,0.1,100,32,150,18,20,47362,0.6111,0.7,9.6,10.59,0.096,10.59,40.5,42
+graph_classification,MUTAG,gat,avg,3,64,0.01,100,32,150,18,20,47362,0.8333,0.8,9.45,10.49,0.0945,10.49,40.6,42
+graph_classification,MUTAG,gat,avg,3,64,0.001,100,32,150,18,20,47362,0.8333,0.75,9.4,10.4,0.094,10.41,40.8,42
+graph_classification,MUTAG,sage,avg,3,64,0.1,100,32,150,18,20,22018,0.6111,0.7,5.98,6.68,0.0598,6.68,19.1,42
+graph_classification,MUTAG,sage,avg,3,64,0.01,100,32,150,18,20,22018,0.8333,0.8,6.09,6.82,0.0609,6.82,19.1,42
+graph_classification,MUTAG,sage,avg,3,64,0.001,100,32,150,18,20,22018,0.7222,0.7,6.07,6.75,0.0607,6.75,19.1,42
+graph_classification,MUTAG,gin,avg,3,64,0.1,100,32,150,18,20,25861,0.7222,0.7,6.41,7.06,0.0641,7.07,19.6,42
+graph_classification,MUTAG,gin,avg,3,64,0.01,100,32,150,18,20,25861,1.0,0.9,6.47,7.16,0.0647,7.17,19.6,42
+graph_classification,MUTAG,gin,avg,3,64,0.001,100,32,150,18,20,25861,1.0,0.95,6.43,7.16,0.0643,7.17,19.6,42

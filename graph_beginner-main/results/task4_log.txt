@@ -1,0 +1,53 @@
+device = cuda
+
+==============================================================================
+STAGE 1  主对比：数据集 × {TransE, RotatE, ConvE}
+==============================================================================
+  [run ] countries_S1/transe
+         MRR=0.5167 H@1=0.2500 H@10=1.0000 per_ep=0.016s
+  [run ] countries_S1/rotate
+         MRR=0.7941 H@1=0.6250 H@10=0.9583 per_ep=0.027s
+  [run ] countries_S1/conve
+         MRR=0.5778 H@1=0.4167 H@10=0.9583 per_ep=0.073s
+  [run ] wn18rr/transe
+         MRR=0.1916 H@1=0.0635 H@10=0.4196 per_ep=0.562s
+  [run ] wn18rr/rotate
+         MRR=0.3465 H@1=0.2808 H@10=0.4627 per_ep=2.108s
+  [run ] wn18rr/conve
+         MRR=0.0640 H@1=0.0322 H@10=0.1273 per_ep=7.320s
+  -> F:\zhuomian\graph_beginner-main\results\task4_kge.csv (6 条新记录)
+
+==============================================================================
+STAGE 2  嵌入维度消融（countries_S1）
+==============================================================================
+  [run ] countries_S1/transe/dim=50
+         MRR=0.6681 H@10=1.0000
+  [run ] countries_S1/transe/dim=100
+         MRR=0.7292 H@10=1.0000
+  [run ] countries_S1/transe/dim=200
+         MRR=0.9583 H@10=1.0000
+  [run ] countries_S1/rotate/dim=50
+         MRR=0.6945 H@10=0.9167
+  [run ] countries_S1/rotate/dim=100
+         MRR=0.7361 H@10=1.0000
+  [run ] countries_S1/rotate/dim=200
+         MRR=0.6458 H@10=1.0000
+  -> F:\zhuomian\graph_beginner-main\results\task4_dim.csv (6 条新记录)
+
+全部完成，用时 802.5s
+device = cuda
+
+==============================================================================
+STAGE 1  主对比：数据集 × {TransE, RotatE, ConvE}
+==============================================================================
+  [skip] countries_S1/transe
+  [skip] countries_S1/rotate
+  [run ] countries_S1/conve
+         MRR=0.5083 H@1=0.2917 H@10=1.0000 per_ep=0.067s
+  [skip] wn18rr/transe
+  [skip] wn18rr/rotate
+  [run ] wn18rr/conve
+         MRR=0.0996 H@1=0.0418 H@10=0.2013 per_ep=8.382s
+  -> F:\zhuomian\graph_beginner-main\results\task4_kge.csv (2 条新记录)
+
+全部完成，用时 680.0s
